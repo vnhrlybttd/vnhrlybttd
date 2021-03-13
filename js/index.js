@@ -69,6 +69,32 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         document.body.appendChild(css);
       };
   
-  
-  
-     
+
+
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+
+
+
+/*   // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+let vh = window.innerHeight * 0.01;
+// Then we set the value in the --vh custom property to the root of the document
+document.documentElement.style.setProperty('--vh', `${vh}px`); */
+
+
+
+var scrollSpy = new bootstrap.ScrollSpy(document.body, {
+  target: '#navbar'
+})
+
+
